@@ -1,6 +1,6 @@
-## smms
+# smms
 smms是一个用Java写的sm.ms的api
-### 安装
+## 安装
 在项目的`pom.xml`中添加：
 ```xml
 <dependency>
@@ -14,14 +14,14 @@ smms是一个用Java写的sm.ms的api
 mvn install
 ```
 包的版本请随时关注本项目的[Package](https://github.com/WangTingZheng/smms/packages)
-### 使用
-#### 注册
+## 使用
+### 注册
 请前往[smms官网](https://sm.ms/) 注册一个账号，每一个账号都有5G免费空间，注册之后，请前往
 ```json
 User->Dashboard->API token
 ```
 获取您的Secret Token。请您记住他，并且无论如何都不要向别人透露，如果有透露，请及时更改token。
-#### json文件
+### json文件
 为了您的信息安全，我特意设计了您可以从json文件读取用户名、密码和token的方法，您只需要将您的这些信息写入一个json文件中，然后确保这个json文件不被泄露就行了，您的源代码在什么情况下都不会泄露您的敏感信息，因为这些内容是在内存中被处理的。
 
 您可以在您的计算机上新建一个json文件，比如我在项目根目录下的`conf`下新建了一个叫smms.json的文件，它的格式如下：
@@ -45,7 +45,7 @@ String username = InformationConverter.getValue("conf/smms.json", "para", "usern
 String password = InformationConverter.getValue("conf/smms.json", "para", "password");
 String Authorization = InformationConverter.getValue("conf/smms.json", "header", "Authorization");
 ```
-#### 参数的传入
+### 参数的传入
 在本api中，您唯一需要关心的就是参数的传入，至于传入什么样的参数，您可以前往smms的[官方文档](https://doc.sm.ms/) 查阅，参数主要有三类：
 1. para：即parameter，参数，也就是url后面跟着的字符串
 2. header：头，在smms里只需要关心Authorization，也就是您的token
@@ -77,7 +77,7 @@ body.put("smfile","/C:/Users/14037/Pictures/github_education.png");
 ```
 构建好这些HashMap之后，您就可以传入你想要执行的函数中了，您将得到一个json格式的返回值
 
-#### 例子
+### 例子
 
 ```java
 public class App {
