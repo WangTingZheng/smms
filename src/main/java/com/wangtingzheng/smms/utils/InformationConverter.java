@@ -14,7 +14,7 @@ import java.util.Set;
  * @feature convert file JSONObject String
  */
 public class InformationConverter {
-    public JSONObject fileToJson(String path)
+    public static JSONObject fileToJson(String path)
     {
         String text = null;
         String str;
@@ -33,7 +33,7 @@ public class InformationConverter {
         return JSONObject.parseObject(text);
     }
 
-    public void stringToFile(String text, String path)
+    public static void stringToFile(String text, String path)
     {
         File file = new File(path);
         try(FileWriter writer = new FileWriter(file);
@@ -47,7 +47,7 @@ public class InformationConverter {
     }
 
 
-    public Map<String, Object> getItem(String path, String item)
+    public static Map<String, Object> getItem(String path, String item)
     {
         JSONObject object = fileToJson(path);
         JSONObject nodeOject = object.getJSONObject(item);
@@ -59,7 +59,7 @@ public class InformationConverter {
      * @param object the jsonObject need to convert
      * @return the hashMap<String, String>
      */
-    public HashMap<String, String> jsonToHasMap(JSONObject object)
+    public static HashMap<String, String> jsonToHasMap(JSONObject object)
     {
         HashMap<String, String> hashMap = new HashMap<String, String>();
         Set<String> set = object.keySet();
@@ -72,17 +72,17 @@ public class InformationConverter {
         return hashMap;
     }
 
-    public JSONObject StringToJson(String msg)
+    public static JSONObject StringToJson(String msg)
     {
         return JSONObject.parseObject(msg);
     }
 
-    public String JsonToString(JSONObject jsonObject)
+    public static String JsonToString(JSONObject jsonObject)
     {
         return jsonObject.toJSONString();
     }
 
-    public String getValue(String path, String item, String value)
+    public static String getValue(String path, String item, String value)
     {
         JSONObject object = fileToJson(path);
         JSONObject nodeOject = object.getJSONObject(item);
@@ -95,7 +95,7 @@ public class InformationConverter {
      * @param item the item of json
      * @return the hashMap<String, String>
      */
-    public HashMap<String, String> getItemHasMap(String path, String item)
+    public static HashMap<String, String> getItemHasMap(String path, String item)
     {
         JSONObject object = fileToJson(path);
         object = object.getJSONObject(item);

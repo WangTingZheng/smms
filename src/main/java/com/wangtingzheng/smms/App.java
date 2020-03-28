@@ -17,10 +17,9 @@ public class App {
 
     public static void main(String[] arg)
     {
-        InformationConverter informationConverter = new InformationConverter();
-        String username = informationConverter.getValue("conf/smms.json", "para", "username");
-        String password = informationConverter.getValue("conf/smms.json", "para", "password");
-        String Authorization = informationConverter.getValue("conf/smms.json", "header", "Authorization");
+        String username = InformationConverter.getValue("conf/smms.json", "para", "username");
+        String password = InformationConverter.getValue("conf/smms.json", "para", "password");
+        String Authorization = InformationConverter.getValue("conf/smms.json", "header", "Authorization");
 
         HashMap<String,String> para = new HashMap<String, String>();
         para.put("username" , username);
@@ -28,6 +27,6 @@ public class App {
         HashMap<String,String> header = new HashMap<String, String>();
         header.put("Authorization", Authorization);
 
-        System.out.println(Image.uploadHistory(header));
+        System.out.println(User.getProfile(header));
     }
 }
