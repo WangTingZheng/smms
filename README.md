@@ -6,7 +6,7 @@ smms是一个用Java写的sm.ms的api
 <dependency>
   <groupId>com.wangtingzheng.api</groupId>
   <artifactId>smms</artifactId>
-  <version>1.0-snapshot</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 然后执行：
