@@ -17,16 +17,6 @@ public class App {
 
     public static void main(String[] arg)
     {
-        String username = InformationConverter.getValue("conf/smms.json", "para", "username");
-        String password = InformationConverter.getValue("conf/smms.json", "para", "password");
-        String Authorization = InformationConverter.getValue("conf/smms.json", "header", "Authorization");
-
-        HashMap<String,String> para = new HashMap<String, String>();
-        para.put("username" , username);
-        para.put("password", password);
-        HashMap<String,String> header = new HashMap<String, String>();
-        header.put("Authorization", Authorization);
-
-        System.out.println(User.getProfile(header));
+        System.out.println(User.getProfile());
     }
 }

@@ -18,10 +18,9 @@ import java.util.Set;
 public class Post {
 
     public  static void main(String[] args) throws IOException {
-        InformationConverter informationConverter = new InformationConverter();
-        String username = informationConverter.getValue("conf/smms.json", "para", "username");
-        String password = informationConverter.getValue("conf/smms.json", "para", "password");
-        String Authorization = informationConverter.getValue("conf/smms.json", "header", "Authorization");
+        String username = InformationConverter.getValue("conf/smms.json", "para", "username");
+        String password = InformationConverter.getValue("conf/smms.json", "para", "password");
+        String Authorization = InformationConverter.getValue("conf/smms.json", "header", "Authorization");
 
         HashMap<String,String> para = new HashMap<String, String>();
         para.put("username" , username);
