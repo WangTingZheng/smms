@@ -2,7 +2,6 @@ package com.wangtingzheng.smms.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wangtingzheng.smms.api.Image;
-import com.wangtingzheng.smms.utils.InformationConverter;
 import okhttp3.*;
 
 import java.io.File;
@@ -144,7 +143,7 @@ public class Post {
             Response response = client.newCall(request).execute();
             String res = Objects.requireNonNull(response.body()).string();
             InformationConverter informationConverter = new InformationConverter();
-            return informationConverter.StringToJson(res);
+            return InformationConverter.StringToJson(res);
         } catch (IOException e) {
             e.printStackTrace();
         }

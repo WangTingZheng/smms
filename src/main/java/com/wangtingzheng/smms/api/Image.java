@@ -23,6 +23,11 @@ public class Image {
         return post(url, para, header, bodyForma);
     }
 
+    /**
+     * base ip and get temporaryHistory
+     * @param header header hashMap, should put Authorization
+     * @return json response object contains temporaryHistory information
+     */
     public static JSONObject temporaryHistory(HashMap<String,String> header)
     {
         HashMap<String,String> para = new HashMap<String, String>();
@@ -30,6 +35,11 @@ public class Image {
         return get(url, para, header);
     }
 
+    /**
+     * get all upload History
+     * @param header header hashMap, should put Authorization
+     * @return json response object contains upload history information
+     */
     public static JSONObject uploadHistory(HashMap<String,String> header)
     {
         HashMap<String,String> para = new HashMap<String, String>();
@@ -84,11 +94,15 @@ public class Image {
     }
 
 
+    /**
+     * convert upload file path to body hashMap
+     * @param path the file path
+     * @return hasHMap which can be add into post/get function
+     */
     public static HashMap<String, String> pathToHashMap(String path)
     {
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("smfile", path);
         return hashMap;
     }
-
 }

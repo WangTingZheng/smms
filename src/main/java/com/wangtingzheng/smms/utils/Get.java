@@ -7,9 +7,7 @@ import okhttp3.Response;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Objects;
-import java.util.Set;
 
 public class Get {
 
@@ -34,6 +32,13 @@ public class Get {
     }
 
 
+    /**
+     * send a get to a site
+     * @param url the website url
+     * @param para the parameter hashMap, use put to add
+     * @param header the header hasMap, use put to add
+     * @return a response json object
+     */
     public static JSONObject get(String url, HashMap<String,String> para, HashMap<String,String> header)
     {
         String wholeUrl = url + returnPara(para);
@@ -41,7 +46,7 @@ public class Get {
                 .build();
         Request.Builder builder = returnHeaders(header);
         Request request = builder
-                .url(url)
+                .url(wholeUrl)
                 .method("GET", null)
                 .addHeader("accept", "*/*")
                 .addHeader("connection", "Keep-Alive")
@@ -52,7 +57,7 @@ public class Get {
             Response response = client.newCall(request).execute();
             String res = Objects.requireNonNull(response.body()).string();
             InformationConverter informationConverter = new InformationConverter();
-            return informationConverter.StringToJson(res);
+            return InformationConverter.StringToJson(res);
         } catch (IOException e) {
             e.printStackTrace();
         }

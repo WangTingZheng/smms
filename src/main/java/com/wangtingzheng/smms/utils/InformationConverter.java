@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @date 2020-3-35
+ * @date  2020-3-35
  * @author 14037
  * @feature convert file JSONObject String
  */
@@ -57,7 +57,7 @@ public class InformationConverter {
     /**
      * Convert jsonobject to hashMap
      * @param object the jsonObject need to convert
-     * @return the hashMap<String, String>
+     * @return the hashMap(String, String)
      */
     public static HashMap<String, String> jsonToHasMap(JSONObject object)
     {
@@ -93,7 +93,7 @@ public class InformationConverter {
      * get a certain item json value from file path and convert it to hashMap
      * @param path the json file path
      * @param item the item of json
-     * @return the hashMap<String, String>
+     * @return the hashMap(String, String)
      */
     public static HashMap<String, String> getItemHasMap(String path, String item)
     {

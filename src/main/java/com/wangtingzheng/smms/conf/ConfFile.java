@@ -1,6 +1,5 @@
 package com.wangtingzheng.smms.conf;
 
-import com.alibaba.fastjson.JSONObject;
 import com.wangtingzheng.smms.utils.InformationConverter;
 
 import java.util.*;
@@ -9,6 +8,10 @@ public class ConfFile {
 
     private static HashMap<String, HashMap<String,String>> confList = new HashMap<String, HashMap<String, String>>();
 
+    /**
+     * get user information from ~/smms.json and convert into hashMap
+     * @return a hashMap contain user information stores in ~/smms.json
+     */
     public static HashMap<String, HashMap<String,String>> getConf()
     {
         if (confList.size() == 0)

@@ -13,6 +13,10 @@ public class ConfParent {
         this.confInterface = confInterface;
     }
 
+    /**
+     * get response from ConfInterface dealHashMap()
+     * @return the response json object
+     */
     public JSONObject getResponse() {
         HashMap<String, HashMap<String, String>> config = ConfFile.getConf();
         HashMap<String, String> para = null;

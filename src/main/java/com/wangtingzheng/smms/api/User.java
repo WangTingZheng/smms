@@ -14,6 +14,11 @@ import static com.wangtingzheng.smms.utils.Post.post;
 public class User {
 
 
+    /**
+     * get user profile information
+     * @param header  header hashMap, should put Authorization
+     * @return  json response object contains user profile information
+     */
     public static JSONObject getProfile(HashMap<String,String> header)
     {
         HashMap<String,String> bodyForma = new HashMap<String,String>();
@@ -23,7 +28,15 @@ public class User {
         return post(url, para, header, bodyForma);
     }
 
-    public static  JSONObject getToken(HashMap<String,String> para, HashMap<String,String> header)
+
+
+    /**
+     * get user token information
+     * @param para  parameter hashMap, should put Authorization
+     * @param header header hashMap, should put Authorization
+     * @return  json response object contains user token information
+     */
+    public static JSONObject getToken(HashMap<String,String> para, HashMap<String,String> header)
     {
         HashMap<String,String> bodyForma = new HashMap<String,String>();
         bodyForma.put("none","");
