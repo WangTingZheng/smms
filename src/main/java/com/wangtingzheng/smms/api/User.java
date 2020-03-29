@@ -31,6 +31,10 @@ public class User {
         return post(url, para, header, bodyForma);
     }
 
+    /**
+     * access smms user key value from user home and get user profile
+     * @return profile response json object
+     */
     public static JSONObject getProfile()
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
@@ -42,6 +46,10 @@ public class User {
         return confParent.getResponse();
     }
 
+    /**
+     * access smms user key value from user home and get user token
+     * @return token response json object
+     */
     public static JSONObject getToken()
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
@@ -52,6 +60,4 @@ public class User {
         });
         return confParent.getResponse();
     }
-
-
 }

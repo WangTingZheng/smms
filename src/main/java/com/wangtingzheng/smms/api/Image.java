@@ -37,6 +37,11 @@ public class Image {
         return get(url, para, header);
     }
 
+    /**
+     * access smms user key value from user home and upload image
+     * @param path the file you want to upload
+     * @return the upload response json object
+     */
     public static JSONObject upload(String path)
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
@@ -48,6 +53,10 @@ public class Image {
         return confParent.getResponse();
     }
 
+    /**
+     * access smms user key value from user home and get temporary History
+     * @return the temporary History response json object
+     */
     public static JSONObject temporaryHistory()
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
@@ -59,6 +68,10 @@ public class Image {
         return confParent.getResponse();
     }
 
+    /**
+     * access smms user key value from user home and get upload History
+     * @return the tupload History response json object
+     */
     public static JSONObject uploadHistory()
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
