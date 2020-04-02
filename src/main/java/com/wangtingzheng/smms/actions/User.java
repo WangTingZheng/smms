@@ -1,18 +1,16 @@
-package com.wangtingzheng.smms.api;
+package com.wangtingzheng.smms.actions;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wangtingzheng.smms.conf.ConfFile;
 import com.wangtingzheng.smms.conf.ConfInterface;
 import com.wangtingzheng.smms.conf.ConfParent;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
 
 import static com.wangtingzheng.smms.utils.Post.post;
 
 public class User {
 
+    //static String JSONPath = System.getProperty("user.home") + "/smms.json";
 
     /**
      * get user profile information
@@ -27,8 +25,6 @@ public class User {
         String url = "https://sm.ms/api/v2/profile";
         return post(url, para, header, bodyForma);
     }
-
-
 
     /**
      * get user token information
@@ -48,7 +44,7 @@ public class User {
      * access smms user key value from user home and get user profile
      * @return profile response json object
      */
-    public static JSONObject getProfile()
+    public static JSONObject getProfile(String JSONPath)
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
             @Override
@@ -56,14 +52,14 @@ public class User {
                 return getProfile(header);
             }
         });
-        return confParent.getResponse();
+        return confParent.getResponse(JSONPath);
     }
 
     /**
      * access smms user key value from user home and get user token
      * @return token response json object
      */
-    public static JSONObject getToken()
+    public static JSONObject getToken(String JSONPath)
     {
         ConfParent confParent = new ConfParent(new ConfInterface() {
             @Override
@@ -71,6 +67,6 @@ public class User {
                 return getToken(para,header);
             }
         });
-        return confParent.getResponse();
+        return confParent.getResponse(JSONPath);
     }
 }

@@ -12,22 +12,14 @@ public class ConfFile {
      * get user information from ~/smms.json and convert into hashMap
      * @return a hashMap contain user information stores in ~/smms.json
      */
-    public static HashMap<String, HashMap<String,String>> getConf()
+    public static HashMap<String, HashMap<String,String>> getConf(String path)
     {
         if (confList.size() == 0)
         {
-            String filePath = System.getProperty("user.home") + "/smms.json";
-            String username = InformationConverter.getValue(filePath, "para", "username");
-            String password = InformationConverter.getValue(filePath , "para", "password");
-            String Authorization = InformationConverter.getValue(filePath, "header", "Authorization");
-
-            HashMap<String,String> para = new HashMap<String, String>();
-            para.put("username" , username);
-            para.put("password", password);
-            HashMap<String,String> header = new HashMap<String, String>();
-            header.put("Authorization", Authorization);
-            confList.put("para", para);
-            confList.put("header", header);
+            String username = InformationConverter.getValue(path, "para", "username");
+            String password = InformationConverter.getValue(path , "para", "password");
+            String authorization = InformationConverter.getValue(path, "header", "Authorization");
+            confList = InformationConverter.StringToHashMap(username, password, authorization);
         }
         return confList;
     }

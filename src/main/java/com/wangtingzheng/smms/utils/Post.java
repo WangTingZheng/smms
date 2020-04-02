@@ -1,9 +1,8 @@
 package com.wangtingzheng.smms.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.wangtingzheng.smms.api.Image;
+import com.wangtingzheng.smms.actions.Image;
 import okhttp3.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;

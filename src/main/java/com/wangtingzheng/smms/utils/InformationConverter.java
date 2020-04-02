@@ -101,4 +101,30 @@ public class InformationConverter {
         object = object.getJSONObject(item);
         return jsonToHasMap(object);
     }
+
+    /**
+     * convert upload file path to body hashMap
+     * @param path the file path
+     * @return hasHMap which can be add into post/get function
+     */
+    public static HashMap<String, String> pathToHashMap(String path)
+    {
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+        hashMap.put("smfile", path);
+        return hashMap;
+    }
+
+    public static  HashMap<String, HashMap<String,String>> StringToHashMap(String username, String password, String authorization)
+    {
+        HashMap<String, HashMap<String,String>> confList = new HashMap<String, HashMap<String, String>>();
+        HashMap<String,String> para = new HashMap<String, String>();
+        para.put("username" , username);
+        para.put("password", password);
+        HashMap<String,String> header = new HashMap<String, String>();
+        header.put("Authorization", authorization);
+        confList.put("para", para);
+        confList.put("header", header);
+        return confList;
+    }
+
 }
