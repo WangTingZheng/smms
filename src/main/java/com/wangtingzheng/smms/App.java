@@ -6,7 +6,7 @@ import com.wangtingzheng.smms.authorization.UserApi;
 public class App {
     public static void main(String[] arg)
     {
-        Account account = new Account();
+        Account account = new Account("username","password","key");
         UserApi userApi = new UserApi(account);
         System.out.println(userApi.getToken());
     }

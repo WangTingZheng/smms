@@ -6,10 +6,11 @@ Java 版的sm.ms图床api
 获取用户信息：
 ```java
 public class App {
-
     public static void main(String[] arg)
     {
-        System.out.println(User.getProfile());
+        Account account = new Account("username","password","key");
+        UserApi userApi = new UserApi(account);
+        System.out.println(userApi.getToken());
     }
 }
 ```
