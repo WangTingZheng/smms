@@ -7,6 +7,11 @@ import java.util.HashMap;
 import static com.wangtingzheng.smms.utils.Post.post;
 import static com.wangtingzheng.smms.utils.Get.get;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:39
+ * @features based action about image
+ */
 public class Image {
     /**
      * upload image file to sm.ms

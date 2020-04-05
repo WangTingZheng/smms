@@ -7,6 +7,11 @@ import com.wangtingzheng.smms.utils.InformationConverter;
 
 import java.util.HashMap;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:41
+ * @features define function do Image-about action from String
+ */
 public class ImageApiFromString {
 
     private HashMap<String,String> para;

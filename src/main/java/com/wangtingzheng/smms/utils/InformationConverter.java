@@ -11,9 +11,14 @@ import java.util.Set;
 /**
  * @date  2020-3-35
  * @author 14037
- * @feature convert file JSONObject String
+ * @features convert file JSONObject String
  */
 public class InformationConverter {
+    /**
+     * reader json file and convert to JSONObject
+     * @param path the json's file path
+     * @return a fastjson JSONObject
+     */
     public static JSONObject fileToJson(String path)
     {
         String text = null;
@@ -33,6 +38,11 @@ public class InformationConverter {
         return JSONObject.parseObject(text);
     }
 
+    /**
+     * write json String to a json file
+     * @param text the json text needs to write
+     * @param path the json file path needs to save
+     */
     public static void stringToFile(String text, String path)
     {
         File file = new File(path);
@@ -47,6 +57,12 @@ public class InformationConverter {
     }
 
 
+    /**
+     * get item from json text file
+     * @param path the json file path
+     * @param item the item you want to get, can be para, header
+     * @return a Map, key is String, value is Object
+     */
     public static Map<String, Object> getItem(String path, String item)
     {
         JSONObject object = fileToJson(path);
@@ -114,6 +130,13 @@ public class InformationConverter {
         return hashMap;
     }
 
+    /**
+     * converter account information to HashMap
+     * @param username the smms username
+     * @param password the smms password
+     * @param authorization the smms key
+     * @return a hashMap, Key is String(username, password, authorization), Value is HashMap(para, header)
+     */
     public static  HashMap<String, HashMap<String,String>> StringToHashMap(String username, String password, String authorization)
     {
         HashMap<String, HashMap<String,String>> confList = new HashMap<String, HashMap<String, String>>();
@@ -126,5 +149,4 @@ public class InformationConverter {
         confList.put("header", header);
         return confList;
     }
-
 }

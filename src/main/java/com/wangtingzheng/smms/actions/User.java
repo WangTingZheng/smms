@@ -8,6 +8,11 @@ import java.util.HashMap;
 
 import static com.wangtingzheng.smms.utils.Post.post;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:40
+ * @features based action about user
+ */
 public class User {
 
     //static String JSONPath = System.getProperty("user.home") + "/smms.json";

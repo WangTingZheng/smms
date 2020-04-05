@@ -3,6 +3,11 @@ package com.wangtingzheng.smms.conf;
 import com.alibaba.fastjson.JSONObject;
 import java.util.HashMap;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:40
+ * @features configure interface class
+ */
 public abstract class ConfInterface {
 
     /**

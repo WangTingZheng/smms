@@ -4,6 +4,11 @@ import com.wangtingzheng.smms.utils.InformationConverter;
 
 import java.util.*;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:40
+ * @features get configure from json file
+ */
 public class ConfFile {
 
     private static HashMap<String, HashMap<String,String>> confList = new HashMap<String, HashMap<String, String>>();

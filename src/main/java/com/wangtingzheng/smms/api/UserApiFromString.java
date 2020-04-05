@@ -7,6 +7,11 @@ import com.wangtingzheng.smms.utils.InformationConverter;
 
 import java.util.HashMap;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:41
+ * @features define function do User-about action from String
+ */
 public class UserApiFromString {
     private HashMap<String,String> para;
     private HashMap<String,String> header;

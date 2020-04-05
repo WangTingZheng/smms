@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 
+/**
+ * @author WangTingZheng
+ * @date 2020-04-05 15:41
+ * @features define get actions
+ */
 public class Get {
 
     /**
